@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <nav className=' nav'>
+          <Link href={'/dashboard'}>首页</Link>
           <Link href={'/list'}>列表</Link>
           <Link href={'/list/create'}>创建</Link>
           <Link href={'/about'}>关于我们</Link>
