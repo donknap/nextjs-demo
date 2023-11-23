@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  padding: 10rem;
+}
+
+.nav {
+  @apply border border-red-600 border-solid flex-row overflow-hidden leading-10 h-10 mb-10
+}
+
+.nav a {
+  @apply ml-5 border-r border-solid border-gray-500 pr-5
+}
+
+.list {
+  @apply mt-10
+}
+
+.list li {
+  @apply border-b border-gray-400 border-solid p-5
+}
