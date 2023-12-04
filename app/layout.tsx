@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import "@arco-design/web-react/dist/css/arco.css";
+import MainLayout from '@/component/layout/main-layout';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,14 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className=' nav'>
-          <Link href={'/dashboard'}>首页</Link>
-          <Link href={'/list'}>列表</Link>
-          <Link href={'/list/create'}>创建</Link>
-          <Link href={'/about'}>关于我们</Link>
-          <Link href={'/help'}>帮助</Link>
-        </nav>
-        {children}
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   )

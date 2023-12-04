@@ -1,24 +1,16 @@
 import React from 'react'
 import ItemImage from './item-image'
-
-interface Item {
-  name: string
-  url: string
-}
-
-interface Result {
-  results: Item[]
-  count: number
-}
-
-async function getList(): Promise<Result> {
-  const response = await fetch('https://pokeapi.co/api/v2/pokemon/')
-  return response.json()
-}
+import { getList, Result } from './service'
 
 export default async function Page() {
-  const list = await getList()
-  console.log(list);
+  const list = await new Promise<Result>((reslove, reject) => {
+    setTimeout(() => {
+      getList().then(res => {
+        reslove(res)
+        //reject("错误获取错误")
+      })
+    }, 3000)
+  })
 
   return (
     <>
